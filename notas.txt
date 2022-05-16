@@ -39,6 +39,7 @@ Enviar ao arquivos para deploy:
 heroku git:remote -a expense-strapi
 git add .
 git commit -am "Ajustes de deploy"
+git pull heroku master
 git push heroku master
 
 Ajusda do Heroku:
@@ -49,6 +50,7 @@ heroku restart -a expense-strapi
 heroku logs --tail
 
 Enviar para o github:
-git remote add origin https://github.com/marcoscrocci/expense-strapi
+git remote set-url origin https://github.com/marcoscrocci/expense-strapi
 
-
+Enviar para o Heroku:
+git remote set-url origin https://git.heroku.com/expense-strapi.git
