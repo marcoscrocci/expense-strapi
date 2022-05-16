@@ -1,0 +1,52 @@
+- Criar o projeto:
+npx create-strapi-api expense-strapi
+
+Site do MongoDB:
+https://cloud.mongodb.com/
+
+Executar a aplicação:
+npm run develop
+
+expense
+tracker
+
+https://expense-strapi.herokuapp.com
+https://git.heroku.com/expense-strapi.git
+
+Correções para funcionar o deploy para o Heroku:
+A versão do Node.js e NPM local deve estar igual ao que foi definido no arquivo package.json:
+
+marcoscrocci@iMac-de-Marcos expense-strapi % node --version
+v16.15.0
+
+marcoscrocci@iMac-de-Marcos expense-strapi % npm --version
+8.5.5
+
+Ajustar a versão no arquivo package.json:
+  "engines": {
+    "node": "16.x",
+    "npm": "^8.5.5"
+  },
+
+Executar novamente:
+npm install
+
+Ajustar as configurações do Heroku:
+heroku config:set USE_NPM_INSTALL=true
+heroku config:set NODE_MODULES_CACHE=false
+
+Enviar ao arquivos para deploy:
+heroku git:remote -a expense-strapi
+git add .
+git commit -am "Ajustes de deploy"
+git push heroku master
+
+Ajusda do Heroku:
+https://devcenter.heroku.com/articles/troubleshooting-node-deploys
+https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version
+
+heroku restart -a expense-strapi
+heroku logs --tail
+
+
+
