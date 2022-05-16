@@ -48,5 +48,7 @@ https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-versio
 heroku restart -a expense-strapi
 heroku logs --tail
 
+Enviar para o github:
+git remote add origin https://github.com/marcoscrocci/expense-strapi
 
 
